@@ -1,8 +1,5 @@
 package com.example.practicalGuide_02.Controller;
 
-import com.example.practicalGuide_02.Model.Student;
-import com.example.practicalGuide_02.Service.StudentService;
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +14,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.example.practicalGuide_02.Model.Student;
+import com.example.practicalGuide_02.Service.StudentService;
 
 @RestController
 @CrossOrigin
@@ -51,7 +51,7 @@ public class StudentController {
     @SuppressWarnings("Convert2Diamond")
     public ResponseEntity<String> deleteStudent(@PathVariable("id") long id){
         studentService.deleteStudent(id);
-        return new ResponseEntity<String>("Employee deleted Successfully.",HttpStatus.OK);
+        return new ResponseEntity<String>("Student deleted Successfully.",HttpStatus.OK);
     }
      @GetMapping("getStudentByYearsOfEnrollment/{yearsOfEnrollment}")
     public List<Student> getStudentByYearsOfExperience(@PathVariable("yearsOfEnrollment") int yearsOfEnrollment){
